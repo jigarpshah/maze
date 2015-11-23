@@ -1,0 +1,77 @@
+
+<html>
+ <head>
+ <meta charset="utf-8">
+ <title>MAZE</title>
+    {% load staticfiles %}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+      <!-- <script src="http://vsn4ik.github.io/bootstrap-checkbox/dist/js/bootstrap-checkbox.min.js" ></script> -->
+     <script src="{% static "radio/js/initial_view.js" %}"></script>
+     <script src="{% static "radio/js/jquery-ui.js" %}"></script>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static "radio/stylesheets/jquery-ui.structure.min.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "radio/stylesheets/jquery-ui.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "radio/stylesheets/initial_view.css" %}">
+     <link rel="stylesheet" type="text/css" href="{% static "radio/stylesheets/global.css" %}">
+ </head>
+ <body>
+
+<div class="container">
+<br><br><br><br>
+<div class="row well" style='background-color: rgba(16,16,16,0.5)'>
+<h1 class="logo" style='color: white; font-style: oblique;'align="center">Maze</h1>
+<h2 class="title" align="center"><em>Music your way.</em></h2>
+
+<br><br><br>
+<form id="user_input">
+<div align="center" class="row">
+<div class="col-lg-4">
+   <h3 style='color: white; font-family: FontAwesome;'>Language:</h3>
+    <select class='form-control'form="user_input" name="language">
+     <option value="English">English</option>
+      <option value="French">French</option>
+      <option value="Spanish">Spanish</option>
+      <option value="Hindi">Hindi</option>
+      <option value="German">German</option>
+    </select>
+</div>
+
+<div class="col-lg-4 ">
+    <h3 style='color: white; font-family: FontAwesome;'>Song Era Range:</h3>
+    <input form="user_input" class="form-control" name="date_range" type="text" id="amount">
+    <br><br>
+  <div id="slider-range"></div>
+  <br><br><br><br>
+  <input class="btn btn-lg" type="submit" id="submit" value="Play me some music!" formmethod="post" formaction="/radio/song/">
+</div>
+
+  <h3 style='color: white; font-family: FontAwesome;'>Mood:</h3>
+
+    <input form="user_input" id="inputOne" type="checkbox" name="mood" value="happy">
+    <label for="inputOne" style='color: white; padding-top:13px'>Happy</label>
+   
+    <input form="user_input" id="inputTwo"  type="checkbox" name="mood" value="sad">
+    <label for="inputTwo" style='color: white; padding-top:13px'>Sad</label>
+    
+    <input form="user_input" id="inputThree" type="checkbox" name="mood" value="party">
+    <label for="inputThree" style='color: white; padding-top:13px'>Party</label>
+    
+    <input form="user_input" id="inputFour"  type="checkbox" name="mood" value="relaxed">
+    <label for="inputFour" style='color: white; padding-top:13px'>Relaxed</label>
+   
+    <input form="user_input" id="inputFive" type="checkbox" name="mood" value="angry">
+    <label for="inputFive" style='color: white; padding-top:13px'>Angry</label>
+    
+    <input form="user_input" id="inputSix" type="checkbox" name="mood" value="love">
+    <label for="inputSix" style='color: white; padding-top:13px'>Love</label>
+
+</div>
+ </div>
+ 
+ </body>
+ </html>
+
+
+   

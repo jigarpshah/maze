@@ -1,0 +1,126 @@
+
+.ui-slider-horizontal {
+    height: 8px;
+    width: 200px;
+}
+.ui-slider .ui-slider-handle {
+    height: 15px;
+    width: 5px;
+    padding-left: 5px;
+}
+
+.logo{
+font-family: FontAwesome;
+font-size: 60pt
+}
+
+.artistAlbumInfo {
+  font-family: FontAwesome;
+  text-align: center;
+  background-color: rgba(221, 221, 221,.5);
+  opacity: .6;
+}
+
+/* line 22, global.scss */
+.albumArt {
+  border-radius: 50%;
+  border: 3px solid #ccc;
+}
+
+/* line 27, global.scss */
+.frequency {
+  margin-top: 5px;
+  transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  /* IE 9 */
+  -webkit-transform: rotate(180deg);
+  /* Opera, Chrome, and Safari */
+}
+/* line 32, global.scss */
+.frequency div {
+  height: 6px;
+  background-color: #ccc;
+  border: 1px dotted rgba(221, 221, 221,.5);
+}
+
+.btn-default{
+  font-family: FontAwesome;
+  border-radius: 15px;
+  background-color: rgba(16,16,16,1);
+  color: white;
+}
+.btn{
+  font-family: FontAwesome;
+  border: 1px solid white;
+  border-radius: 10px;
+  background-color: rgba(16,16,16,.5);
+  color: white;
+  font-size: 12pt;
+}
+.btn:hover {
+  background: rgba(221, 221, 221,.5);
+  background-image: -webkit-linear-gradient(top, rgba(221, 221, 221,.5), rgba(221, 221, 221,.5));
+  background-image: -moz-linear-gradient(top, rgba(221, 221, 221,.5), rgba(221, 221, 221,.5));
+  background-image: -ms-linear-gradient(top, rgba(221, 221, 221,.5), rgba(221, 221, 221,.5));
+  background-image: -o-linear-gradient(top, rgba(221, 221, 221,.5), rgba(221, 221, 221,.5));
+  background-image: linear-gradient(to bottom, rgba(221, 221, 221,.5), rgba(221, 221, 221,.5));
+  text-decoration: none;
+}
+
+.title{
+	font-family: FontAwesome;
+	color: white;
+}
+.form-control{
+	background-color: rgba(16,16,16,0.5);
+	text-align: center;
+	color: white;
+}
+input[type=checkbox] { 
+	display: none;
+}
+
+input[type=checkbox] + label {
+  background: rgba(16,16,16,0.5);
+  height: 50px;
+  width: 60px;
+  display: block;
+  border-radius: 4px;
+  position: relative;
+  transition: all 0.4s;
+  border: solid 1px #FFF;
+  box-shadow: 0 0 1px #FFF;
+  display: inline-block;
+   /* Soften the jagged edge */
+}
+
+
+/* Provide a border when hovered and when the checkbox before it is checked */
+input[type=checkbox] + label:hover,
+input[type=checkbox]:checked + label {
+  box-shadow: 0 0 1px rgba(16,16,16,1);
+  background: rgba(221, 221, 221,.5); /* Soften the jagged edge */
+}
+
+/* 
+- Create a pseudo element :after when checked and provide a tick
+- Center the content
+*/
+input[type=checkbox]:checked + label:after {
+  content: ''; /*content is required, though it can be empty - content: '';*/
+  display: block;
+  height: 1em;
+  width: 1em;
+  position: absolute;
+  top: 0;
+}
+
+
+body {
+	background-image: url("../img/large.jpg");
+	  -webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
+  	font-family: FontAwesome;
+}

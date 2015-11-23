@@ -1,0 +1,11 @@
+Django==1.8.6
+django-pgjson==0.3.1
+httplib2==0.9.2
+oauth2==1.9.0.post1
+psycopg2==2.6.1
+pycrypto==2.6.1
+python-dateutil==2.4.2
+six==1.10.0
+wheel==0.24.0
+google-api-python-client==1.4.2
+-e git+git://github.com/rdio/rdio-python.git@6d28998e3a74c3122884d3f1aaf43e95e4e2fc52#egg=rdioapi

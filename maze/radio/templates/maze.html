@@ -1,0 +1,77 @@
+<html>
+<head>
+  <title>Rdio Playback API simple example</title>
+    {% load staticfiles %}
+  <script src="{% static "radio/js/jquery-1.5.1.min.js" %}"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
+  <script src="{% static "radio/js/token.js" %}"></script>
+  <script src="{% static "radio/js/hello.js" %}"></script>
+  <link rel="stylesheet" type="text/css" href="{% static "radio/stylesheets/initial_view.css" %}">
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="{% static "radio/stylesheets/global.css" %}">
+</head>
+<body>
+  <div class="container">
+    <div id="apiswf"></div>
+    <br><br><br><br><br><br><br><br><br>
+      <div style='background-color: rgba(16,16,16,0.5)'class="row well">
+        <div class="artistAlbumInfo well col-md-6 ">
+          <h3><span id="artist"></span> - <span id="track"></span></h3>
+          <img src="" id="art" class="albumArt">
+        </div>
+        <div class="col-md-6">
+          <div style='background-color: rgba(221, 221, 221,.5); margin: 10px'class="row well well-sm">
+          <h2 style="color:black;opacity:.7;padding-left:40pt;padding-bottom:10pt"id="album"></h2>
+          </div>
+        </div>
+        <div class="col-md-6"> 
+            <div id="freq" class="frequency">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+            <div class="playControls btn-group">
+              <button id="play" class="btn btn-default"><i class="fa fa-play-circle"></i> Play</button>
+              <button id="stop" class="btn btn-default"><i class="fa fa-stop"></i> Stop</button>
+              <button id="pause" class="btn btn-default"><i class="fa fa-pause"></i> Pause</button>
+              <button id="next" class="btn btn-default"><i class="fa fa-step-forward"></i> Next</button>
+            </div>
+          </div>
+
+    <div class="col-md-6"> 
+    <h2 align="center"style="color:#e6e6e6; font-family: FontAwesome;" ><em>How does this song make you feel?</em></h2>
+    <br>
+      <div align="center">
+      <button class="mood_input btn" style="color: #F2E52E" value="happy">HAPPY</button>&nbsp;&nbsp;
+      <button class="mood_input btn" style="color: #E87109" value="party">PARTY</button>&nbsp;&nbsp;
+      <button class="mood_input btn" style="color: #364BE3" value="sad">SAD</button>&nbsp;&nbsp;
+      <button class="mood_input btn" style="color: #ff0000" value="angry" >ANGRY</button>&nbsp;&nbsp;
+      <button class="mood_input btn" style="color: #A5E663" value="relaxed" >RELAXED</button>&nbsp;
+      <button class="mood_input btn" style="color: #ff3399" value="love" >LOVE</button>
+    </div>
+    </div>
+    <div class="col-md-6" id="track-suggestions" style="display: none">
+        <h2 align="center" style="color:#e6e6e6;opacity:.8; font-family: FontAwesome;" >
+            <em>Suggested tracks</em>
+        </h2>
+        <div align="center" class="suggestions"></div>
+    </div>
+</div>
+<div id="songlist" style="visibility: hidden;" data-language="{{ language }}" data-date_range="{{ date_range }}"
+        data-mood="{{ mood }}">
+    {% for song in keys %}
+        <div class="song" id="song{{ forloop.counter }}" value="{{ song }}">
+            {{ song }}
+        </div>
+    {% endfor %}
+</div>
+</body>
+</html>

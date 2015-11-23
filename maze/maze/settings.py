@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
-import os.path
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -21,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '!$gqx=9_fiqq*prkgyk@h=aw+is9f3npdg^t^h3_4=mz+@73w5'
+SECRET_KEY = '&s)-0@f*(u_o^p9=@l^nt!+9jx&(l5y8t8ftevimi3=6csgbzs'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -38,6 +37,8 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'radio',
+    'radio.suggest',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -77,10 +78,18 @@ WSGI_APPLICATION = 'maze.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'mazedb',
+        'USER': 'postgres',
+        'PASSWORD': 'postgres',
+        'HOST': 'trey',
+        'PORT': ''
     }
 }
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, "maze/static"),
+)
 
 
 # Internationalization
@@ -101,23 +110,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
-import os
-TEMPLATE_PATH = os.path.join(BASE_DIR, 'templates')
-TEMPLATES = [
-        {
-            'BACKEND': 'django.template.backends.django.DjangoTemplates',
-            'DIRS': [BASE_DIR+"/templates", ],
-            'APP_DIRS': True,
-            'OPTIONS': {
-                'context_processors': [
-                    'django.template.context_processors.debug',
-                    'django.template.context_processors.request',
-                    'django.contrib.auth.context_processors.auth',
-                    'django.contrib.messages.context_processors.messages',
-                ],
-            },
-        },
-    ]
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
-)
+
+TRANSLATE_LANG_CODE_MAP = {
+    'English': ['en'],
+    'German': ['de', 'en'],
+    'Hindi': ['hi'],
+    'Latin': ['la'],
+}
